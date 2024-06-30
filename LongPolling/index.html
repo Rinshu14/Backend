@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <!-- <form  action="/update" method="post"> -->
+    
+<div class="mainDiv" >
+    <!-- <ul class="msgList">
+ <li>hey</li> -->
+    <!-- </ul>
+       <input type="text" name="ChatMsg"></input>
+       <button type="submit" onclick="">send</button>
+   </form>  -->
+   <p >server started</p>
+    </div>
+    <script>
+async function getdata(){
+    let pTag=document.getElementsByTagName("p")[0]
+    let res= await fetch(`/newdata/${pTag.innerText}`)
+    let kl=await res.json()
+    let data= kl.data
+
+    //let pTag=document.getElementsByTagName("p")
+    pTag.innerText=data
+    getdata();
+}
+getdata();
+
+    </script>
+</body>
+</html>
